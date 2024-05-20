@@ -14,7 +14,7 @@ const adminAuthClient = supabase.auth.admin
 
 async function checkUser(userId) {
     const { data, error } = await supabase.auth.admin.getUserById(userId)
-    if (error) {
+    if (error) {a
         console.error(error)
         return false
     } else {
