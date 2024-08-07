@@ -4,16 +4,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require("cors");
+<<<<<<< HEAD
+var cors = require('cors');
+>>>>>>> refs/remotes/origin/master
 
 var indexRouter = require('./routes/index');
 var emailsRouter = require('./routes/email');
 var exportRouter = require('./routes/export');
+var deleteRouter = require('./routes/delete');
 
 var app = express();
 
 app.use(cors());
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -27,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/email', emailsRouter);
 app.use('/export', exportRouter);
+app.use('/delete', deleteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
