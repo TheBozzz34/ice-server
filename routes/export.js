@@ -16,8 +16,9 @@ async function checkUser(userId) {
 
 router.post('/', async function(req, res, next) { // Note the async keyword here
     const userId = req.body.userId;
+    const table = req.body.table;
 
-    if (!userId) {
+    if (!userId || !table) {
         res.status(400).send('Missing required fields');
         return;
     }
@@ -30,7 +31,7 @@ router.post('/', async function(req, res, next) { // Note the async keyword here
     }
 
     const { data, error } = await supabase
-        .from('rounds')
+        .from(table)
         .select()
 
     if (error) {
