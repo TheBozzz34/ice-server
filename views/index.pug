@@ -1,5 +1,40 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 API Documentation
+
+  h2 /email
+  p Sends an invite email to a new user.
+
+  h3 Method
+  p POST
+
+  h3 Headers
+  ul
+    li Authorization: Bearer JWT
+
+  h3 Body Attributes
+  ul
+    li email (string): Email address to send invite to
+    li employee_name (string): Name of the employee
+    li user_id (string): User ID of the recipient
+
+  hr
+
+  h2 /export
+  p Returns a CSV file for export.
+
+  h3 Method
+  p POST
+
+  h3 Headers
+  ul
+    li Authorization: Bearer JWT
+
+  h3 Body Attributes
+  ul
+    li user_id (string): User ID of the recipient
+
+  hr
+
+  //- You can add more routes or details as needed

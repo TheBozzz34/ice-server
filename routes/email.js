@@ -51,7 +51,7 @@ router.post('/', async function(req, res, next) { // Note the async keyword here
         },
         json: true,
         body: {
-            "from": "onboarding@resend.dev",
+            "from": "onboarding@email.scripkitty.store",
             "to": sendTo,
             "subject": "Welcome to Wheeler Peak Ice!",
             "html": custom

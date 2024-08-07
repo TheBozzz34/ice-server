@@ -14,7 +14,7 @@ async function checkUser(userId) {
     }
 }
 
-router.get('/', async function(req, res, next) { // Note the async keyword here
+router.post('/', async function(req, res, next) { // Note the async keyword here
     const userId = req.body.userId;
 
     if (!userId) {
