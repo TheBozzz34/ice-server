@@ -23,13 +23,13 @@ router.get('/', async function(req, res, next) { // Note the async keyword here
         return;
     }
 
-    /*
+    
     const user = await checkUser(userId); // Await the result of checkUser
 
     if (!user) {
         return res.status(400).send('User not found');
     }
-    */
+    
 
     
     const { data, error } = await supabase.auth.admin.getUserById(uuid)
